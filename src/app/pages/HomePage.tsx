@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRightIcon, CompassIcon } from "../../components/ui/Icons";
+import { books } from "../../content/books";
+import { ArrowRightIcon, BookIcon, CompassIcon } from "../../components/ui/Icons";
 import { simulations } from "../../simulations/registry";
 
 export function HomePage() {
@@ -13,28 +14,27 @@ export function HomePage() {
   return (
     <main className="page home-page">
       <section className="hero">
-        <div className="hero-orbit hero-orbit--one" aria-hidden="true" />
-        <div className="hero-orbit hero-orbit--two" aria-hidden="true" />
         <div className="page-width hero-grid">
           <div className="hero-copy">
-            <span className="eyebrow"><i /> An interactive science laboratory</span>
-            <h1>Don’t just read the equation. <em>See it move.</em></h1>
+            <span className="eyebrow">Explore. Measure. Understand.</span>
+            <h1>Experiments for <em>curious</em> minds.</h1>
             <p>
-              Explore physics and mathematics through simulations you can touch, measure, and understand—one variable at a time.
+              Interactive models that connect real-world behavior with the mathematics beneath it.
+              Explore. Measure. Understand.
             </p>
             <div className="hero-actions">
               <Link className="button button--primary button--large" to={featured.route}>
-                Open the first experiment <ArrowRightIcon />
+                Explore simulations <ArrowRightIcon />
               </Link>
               <Link className="button button--ghost button--large" to="/simulations">
-                Browse the lab
+                How it works
               </Link>
             </div>
-            <dl className="hero-stats">
-              <div><dt>01</dt><dd>Live experiment</dd></div>
-              <div><dt>03</dt><dd>World presets</dd></div>
-              <div><dt>100%</dt><dd>Browser-native</dd></div>
-            </dl>
+            <div className="feature-list" aria-label="Lab qualities">
+              <div><CompassIcon /><strong>Interactive</strong><span>Visual models you can experiment with.</span></div>
+              <div><CompassIcon /><strong>Measurable</strong><span>Collect data and see variables in action.</span></div>
+              <div><CompassIcon /><strong>Mathematical</strong><span>Connect observations to the math.</span></div>
+            </div>
           </div>
 
           <Link className="featured-instrument" to={featured.route} aria-label="Open Projectile Motion experiment">
@@ -72,38 +72,12 @@ export function HomePage() {
               </svg>
             </div>
             <div className="instrument-data">
-              <div><span>t</span><strong>1.72</strong><small>s</small></div>
-              <div><span>x</span><strong>34.06</strong><small>m</small></div>
-              <div><span>y</span><strong>19.56</strong><small>m</small></div>
-              <div className="instrument-cta"><CompassIcon /><span>Projectile motion<strong>Enter lab →</strong></span></div>
+              <div><span>Range</span><strong>18.2</strong><small>m</small></div>
+              <div><span>Max height</span><strong>5.1</strong><small>m</small></div>
+              <div><span>Time of flight</span><strong>2.6</strong><small>s</small></div>
+              <div className="instrument-cta"><CompassIcon /><span>Featured simulation<strong>Projectile motion</strong></span></div>
             </div>
           </Link>
-        </div>
-      </section>
-
-      <section className="method-section">
-        <div className="page-width">
-          <div className="section-heading section-heading--wide">
-            <div>
-              <span className="eyebrow">The field method</span>
-              <h2>From phenomenon to understanding</h2>
-            </div>
-            <p>Every experiment follows the same clear path, so visual intuition and mathematical reasoning grow together.</p>
-          </div>
-          <div className="method-grid">
-            {[
-              ["01", "Observe", "See the system evolve in real time with a precise, uncluttered visual model."],
-              ["02", "Interact", "Change initial conditions and immediately compare cause with effect."],
-              ["03", "Measure", "Follow positions, vectors, time, and graphs—not just a decorative animation."],
-              ["04", "Understand", "Connect what you saw to the governing equations and their assumptions."],
-            ].map(([number, title, description]) => (
-              <article key={number} className="method-card">
-                <span>{number}</span>
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -111,10 +85,9 @@ export function HomePage() {
         <div className="page-width">
           <div className="section-heading section-heading--wide">
             <div>
-              <span className="eyebrow">Growing library</span>
-              <h2>Start with mechanics. Go anywhere.</h2>
+              <h2>Simulations</h2>
             </div>
-            <Link className="text-link" to="/simulations">View all experiments <span>→</span></Link>
+            <Link className="text-link" to="/simulations">View all simulations <span>→</span></Link>
           </div>
           <div className="simulation-card-grid">
             {simulations.map((simulation, index) => (
@@ -128,11 +101,35 @@ export function HomePage() {
                   <h3>{simulation.title}</h3>
                   <p>{simulation.description}</p>
                   {simulation.status === "available" ? (
-                    <Link className="card-link" to={simulation.route}>Open experiment <ArrowRightIcon /></Link>
+                    <Link className="card-link" to={simulation.route}>Open simulation <ArrowRightIcon /></Link>
                   ) : (
                     <span className="card-link card-link--disabled">In development</span>
                   )}
                 </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="library-preview library-preview--books">
+        <div className="page-width">
+          <div className="section-heading section-heading--wide">
+            <div>
+              <h2>Books & References</h2>
+            </div>
+            <Link className="text-link" to="/books">View all books <span>→</span></Link>
+          </div>
+          <div className="book-preview-grid">
+            {books.slice(0, 3).map((book) => (
+              <article key={book.title} className="book-preview-card">
+                <div className="book-preview-cover" aria-hidden="true"><BookIcon /></div>
+                <div>
+                  <h3>{book.title}</h3>
+                  <p>{book.author}</p>
+                  <span>{book.description}</span>
+                </div>
+                <ArrowRightIcon />
               </article>
             ))}
           </div>

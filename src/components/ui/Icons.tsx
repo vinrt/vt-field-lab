@@ -72,3 +72,30 @@ export function AtomIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function SearchIcon(props: IconProps) {
+  return (
+    <svg {...defaults} {...props}>
+      <circle cx="11" cy="11" r="7" />
+      <path d="m16 16 4 4" />
+    </svg>
+  );
+}
+
+export function SunIcon(props: IconProps) {
+  return (
+    <svg {...defaults} {...props}>
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+    </svg>
+  );
+}
+
+export function MailIcon(props: IconProps) {
+  return (
+    <svg {...defaults} {...props}>
+      <path d="M4 6h16v12H4z" />
+      <path d="m4 7 8 6 8-6" />
+    </svg>
+  );
+}

@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6622e5c-b618-42aa-8ad2-79bf58673cc3" name="Changes" comment="" />
+    <list default="true" id="a6622e5c-b618-42aa-8ad2-79bf58673cc3" name="Changes" comment="Intial commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/AppShell.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/AppShell.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/Icons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/Icons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +19,80 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "vinrt"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/vinrt/vt-field-lab.git",
+    "accountId": "374b2157-306a-491a-b0ea-13618fa7dbf3"
+  }
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0034480585961798" />
+      <entry key="MS500" value="1.331194316665289" />
+      <entry key="S2" value="2.273688305633507" />
+      <entry key="S5" value="3.2010319228017474" />
+      <entry key="S10" value="3.856262675410907" />
+      <entry key="S30" value="6.911826417783405" />
+      <entry key="S60" value="19.460239007106182" />
+      <entry key="M2" value="41.6062883403746" />
+      <entry key="M5" value="68.65062606590313" />
+      <entry key="M10" value="81.52451026171846" />
+      <entry key="M15" value="86.36983688563517" />
+      <entry key="M30" value="91.52183199021223" />
+      <entry key="H1" value="94.21907109265415" />
+      <entry key="H2" value="95.7336117968626" />
+      <entry key="H4" value="99.85693289658778" />
+      <entry key="D1" value="151.35600035786683" />
+      <entry key="W1" value="183.93507887986704" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9428765204662155" />
+      <entry key="MS500" value="1.316928097787419" />
+      <entry key="S2" value="2.2683493024540575" />
+      <entry key="S5" value="3.198118062936633" />
+      <entry key="S10" value="3.8545283488150983" />
+      <entry key="S30" value="6.910854405167023" />
+      <entry key="S60" value="19.458963937783558" />
+      <entry key="M2" value="41.60495524491679" />
+      <entry key="M5" value="68.64975307089757" />
+      <entry key="M10" value="81.52399289175226" />
+      <entry key="M15" value="86.3694716797556" />
+      <entry key="M30" value="91.52163859861689" />
+      <entry key="H1" value="94.21897157219385" />
+      <entry key="H2" value="95.73356106505754" />
+      <entry key="H4" value="99.85690418130146" />
+      <entry key="D1" value="151.35598770692346" />
+      <entry key="W1" value="183.93507635772363" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1,
@@ -36,16 +113,24 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "ml.llm.AcpAgentsConfigurable",
     "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TEXT"
+    ]
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -63,11 +148,24 @@
       <option name="presentableId" value="Default" />
       <updated>1787409445421</updated>
       <workItem from="1787409446439" duration="289000" />
-      <workItem from="1787409743915" duration="1374000" />
+      <workItem from="1787409743915" duration="4353000" />
     </task>
+    <task id="LOCAL-00001" summary="Intial commit">
+      <option name="closed" value="true" />
+      <created>1787411336855</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1787411336855</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Intial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Intial commit" />
   </component>
 </project>
