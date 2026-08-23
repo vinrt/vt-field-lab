@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { ProjectileMotionPage } from "../simulations/projectile-motion/ProjectileMotionPage";
+import { SolarSystemMotionPage } from "../simulations/solar-system-motion/SolarSystemMotionPage";
 import { AppShell } from "./layout/AppShell";
 import { AboutPage } from "./pages/AboutPage";
 import { BooksPage } from "./pages/BooksPage";
@@ -15,6 +16,7 @@ export function AppRoutes() {
         <Route index element={<HomePage />} />
         <Route path="simulations" element={<SimulationsPage />} />
         <Route path="simulations/projectile-motion" element={<ProjectileMotionPage />} />
+        <Route path="simulations/solar-system-motion" element={<SolarSystemMotionPage />} />
         <Route path="learn" element={<LearnPage />} />
         <Route path="books" element={<BooksPage />} />
         <Route path="about" element={<AboutPage />} />
