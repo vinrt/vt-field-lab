@@ -1589,6 +1589,38 @@ h3 {
 }
 
 /* Books */
+.book-category-list {
+  display: grid;
+  gap: 46px;
+}
+
+.book-category {
+  display: grid;
+  gap: 18px;
+}
+
+.book-category-heading {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line-strong);
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.book-category-heading h2 {
+  margin: 8px 0 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.book-category-heading p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 .book-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1617,6 +1649,11 @@ h3 {
     linear-gradient(150deg, rgba(99, 230, 190, 0.12), transparent 55%),
     #08131f;
   color: var(--mint);
+}
+
+.book-cover strong {
+  color: currentColor;
+  font: 600 14px/1.25 "Manrope", sans-serif;
 }
 
 .book-card:nth-child(3n + 2) .book-cover {
@@ -3101,6 +3138,11 @@ body {
   overflow: hidden;
 }
 
+.footer-signup label.visually-hidden {
+  border: 0;
+  display: block;
+}
+
 .footer-signup input {
   min-width: 0;
   border: 0;
@@ -3116,9 +3158,277 @@ body {
   cursor: pointer;
 }
 
+.footer-signup button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
 .footer-signup svg {
   width: 17px;
   margin: auto;
+}
+
+.signup-status {
+  min-height: 16px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.signup-status--sent {
+  color: var(--mint);
+}
+
+.signup-status--error {
+  color: #9a3f2f;
+}
+
+/* Books browser layout without placeholder covers */
+.books-library-header {
+  margin-bottom: 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 28px;
+}
+
+.books-title-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: var(--text);
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.books-title-row svg {
+  width: 30px;
+  color: var(--mint);
+}
+
+.books-library-header p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 20px;
+}
+
+.book-sort-control {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.book-sort-control select {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text-soft);
+  font: inherit;
+}
+
+.books-browser {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 24px;
+}
+
+.book-filter-panel,
+.book-card--simple {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.book-filter-panel {
+  align-self: start;
+  padding: 20px;
+  position: sticky;
+  top: 94px;
+}
+
+.book-filter-panel h2 {
+  margin: 0 0 20px;
+  color: var(--mint);
+  font-size: 16px;
+}
+
+.book-filter-panel strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.book-filter-list {
+  display: grid;
+  gap: 10px;
+}
+
+.book-filter-list label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-soft);
+  font-weight: 600;
+}
+
+.book-filter-list input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--mint);
+}
+
+.book-filter-panel button {
+  margin-top: 18px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--mint);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.books-result-panel {
+  min-width: 0;
+}
+
+.books-result-toolbar {
+  min-height: 48px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.books-result-toolbar div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  overflow: hidden;
+  background: #fff;
+}
+
+.books-result-toolbar button {
+  width: 48px;
+  height: 44px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: #fff;
+  color: var(--text-soft);
+  cursor: default;
+  font-size: 20px;
+}
+
+.books-result-toolbar button:last-child {
+  border-right: 0;
+}
+
+.books-result-toolbar button.is-active {
+  background: var(--mint);
+  color: #fff;
+}
+
+.book-grid--browser {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.book-card--simple {
+  min-height: 252px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.book-card--simple .book-meta {
+  color: var(--mint);
+  font: 700 11px "IBM Plex Mono", monospace;
+  letter-spacing: 0.09em;
+}
+
+.book-card--simple h2 {
+  margin: 0;
+  color: var(--text);
+  font-family: "Manrope", sans-serif;
+  font-size: 24px;
+  line-height: 1.18;
+  font-weight: 700;
+}
+
+.book-card--simple h3 {
+  margin: -5px 0 4px;
+  color: var(--mint);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.book-card--simple p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.book-tags {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.book-tags span {
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.book-card--simple .related-label {
+  width: fit-content;
+}
+
+@media (max-width: 1100px) {
+  .book-grid--browser {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .books-browser,
+  .books-library-header {
+    grid-template-columns: 1fr;
+  }
+
+  .book-filter-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .book-grid--browser {
+    grid-template-columns: 1fr;
+  }
+
+  .books-library-header p {
+    font-size: 17px;
+  }
+
+  .book-sort-control {
+    width: 100%;
+  }
 }
 
 .footer-legal {

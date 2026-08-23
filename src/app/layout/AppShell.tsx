@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { AtomIcon, MailIcon, SearchIcon, SunIcon } from "../../components/ui/Icons";
 
@@ -11,6 +11,33 @@ const navigation = [
 
 export function AppShell() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [signupEmail, setSignupEmail] = useState("");
+  const [signupStatus, setSignupStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  const submitSignup = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (signupStatus === "sending") return;
+
+    setSignupStatus("sending");
+    const body = new URLSearchParams({
+      "form-name": "newsletter",
+      email: signupEmail,
+    });
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+
+      if (!response.ok) throw new Error("Signup request failed");
+      setSignupEmail("");
+      setSignupStatus("sent");
+    } catch {
+      setSignupStatus("error");
+    }
+  };
 
   return (
     <div className="app-shell">
@@ -79,13 +106,43 @@ export function AppShell() {
             <Link to="/learn">Guides</Link>
             <Link to="/about">About</Link>
           </nav>
-          <form className="footer-signup" onSubmit={(event) => event.preventDefault()}>
+          <form
+            className="footer-signup"
+            name="newsletter"
+            method="post"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={submitSignup}
+          >
+            <input type="hidden" name="form-name" value="newsletter" />
+            <label className="visually-hidden">
+              Do not fill this out
+              <input name="bot-field" tabIndex={-1} />
+            </label>
             <strong>Stay curious.</strong>
             <label>
               <span className="visually-hidden">Email address</span>
-              <input type="email" placeholder="you@example.com" />
-              <button type="submit" aria-label="Subscribe"><MailIcon /></button>
+              <input
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                autoComplete="email"
+                required
+                value={signupEmail}
+                onChange={(event) => {
+                  setSignupEmail(event.target.value);
+                  if (signupStatus !== "idle") setSignupStatus("idle");
+                }}
+              />
+              <button type="submit" aria-label="Subscribe" disabled={signupStatus === "sending"}>
+                <MailIcon />
+              </button>
             </label>
+            <span className={`signup-status signup-status--${signupStatus}`} role="status">
+              {signupStatus === "sending" && "Sending..."}
+              {signupStatus === "sent" && "Sent. Thanks for subscribing."}
+              {signupStatus === "error" && "Could not send. Check hosting form setup."}
+            </span>
           </form>
           <span className="footer-legal">© {new Date().getFullYear()} VT Field Lab</span>
         </div>
