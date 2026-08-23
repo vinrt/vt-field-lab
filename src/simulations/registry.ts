@@ -31,6 +31,16 @@ export const simulations: SimulationDefinition[] = [
     status: "planned",
   },
   {
+    id: "solar-system-motion",
+    title: "Solar System motion",
+    description: "Watch simplified planetary orbits and compare how each world moves around the Sun.",
+    category: "Astronomy",
+    difficulty: "beginner",
+    tags: ["orbits", "solar system", "gravity", "astronomy"],
+    route: "/simulations/solar-system-motion",
+    status: "available",
+  },
+  {
     id: "standing-waves",
     title: "Standing waves",
     description: "See nodes, antinodes, harmonics, and resonance emerge.",

@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6622e5c-b618-42aa-8ad2-79bf58673cc3" name="Changes" comment="Some more cosmetics changes">
+    <list default="true" id="a6622e5c-b618-42aa-8ad2-79bf58673cc3" name="Changes" comment="Arranged books in categories and order">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout/AppShell.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/AppShell.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/BooksPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/BooksPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/books.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/books.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/SimulationsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/SimulationsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simulations/registry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulations/registry.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +16,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
@@ -38,23 +41,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="2.3656018086774733" />
-      <entry key="MS500" value="5.864432088711418" />
-      <entry key="S2" value="12.877647312341647" />
-      <entry key="S5" value="18.472312077256323" />
-      <entry key="S10" value="21.653073916521592" />
-      <entry key="S30" value="24.44494026285512" />
-      <entry key="S60" value="27.35600510944211" />
-      <entry key="M2" value="40.99163992969023" />
-      <entry key="M5" value="109.13904628238792" />
-      <entry key="M10" value="220.94558276979214" />
-      <entry key="M15" value="295.07951274437175" />
-      <entry key="M30" value="403.8806482076856" />
-      <entry key="H1" value="476.6348968989077" />
-      <entry key="H2" value="522.5592410889105" />
-      <entry key="H4" value="562.4219778300281" />
-      <entry key="D1" value="682.4814051027091" />
-      <entry key="W1" value="749.066075160047" />
+      <entry key="MS100" value="1.5520470093854173" />
+      <entry key="MS500" value="4.07135942288558" />
+      <entry key="S2" value="12.732971796507291" />
+      <entry key="S5" value="27.241708421629347" />
+      <entry key="S10" value="42.65957030453094" />
+      <entry key="S30" value="69.11368789071442" />
+      <entry key="S60" value="83.24746543615295" />
+      <entry key="M2" value="98.42154801272225" />
+      <entry key="M5" value="136.77749308953236" />
+      <entry key="M10" value="214.3613890453958" />
+      <entry key="M15" value="290.01243402377594" />
+      <entry key="M30" value="439.98994351791725" />
+      <entry key="H1" value="566.7009126126411" />
+      <entry key="H2" value="653.3600465238397" />
+      <entry key="H4" value="717.690114626859" />
+      <entry key="D1" value="861.4137727812498" />
+      <entry key="W1" value="933.1158477226023" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -76,23 +79,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.3165796123764446" />
-      <entry key="MS500" value="5.837992888621091" />
-      <entry key="S2" value="12.861950808334775" />
-      <entry key="S5" value="18.46266913747891" />
-      <entry key="S10" value="21.6472342557017" />
-      <entry key="S30" value="24.44268881498439" />
-      <entry key="S60" value="27.35474476687479" />
-      <entry key="M2" value="40.99071419675805" />
-      <entry key="M5" value="109.13806671366882" />
-      <entry key="M10" value="220.94457626566498" />
-      <entry key="M15" value="295.0786103854721" />
-      <entry key="M30" value="403.8800261070547" />
-      <entry key="H1" value="476.6345283913714" />
-      <entry key="H2" value="522.5590381305042" />
-      <entry key="H4" value="562.4218668165228" />
-      <entry key="D1" value="682.4813770156359" />
-      <entry key="W1" value="749.0660700716896" />
+      <entry key="MS100" value="1.5191291140373036" />
+      <entry key="MS500" value="4.052859269686147" />
+      <entry key="S2" value="12.718557818549135" />
+      <entry key="S5" value="27.229662248373653" />
+      <entry key="S10" value="42.650388998241546" />
+      <entry key="S30" value="69.10880186309643" />
+      <entry key="S60" value="83.24450939057358" />
+      <entry key="M2" value="98.41976719411751" />
+      <entry key="M5" value="136.77642237299008" />
+      <entry key="M10" value="214.36048137524494" />
+      <entry key="M15" value="290.0115886595402" />
+      <entry key="M30" value="439.9892832445566" />
+      <entry key="H1" value="566.7004821033158" />
+      <entry key="H2" value="653.3597964577112" />
+      <entry key="H4" value="717.6899752785102" />
+      <entry key="D1" value="861.4137392244634" />
+      <entry key="W1" value="933.1158418235192" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -106,7 +109,6 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "KEY_CHAT_IN_TOOLWINDOW": "false",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -114,7 +116,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "new-category-of-simulations",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
@@ -149,7 +151,7 @@
       <option name="presentableId" value="Default" />
       <updated>1787409445421</updated>
       <workItem from="1787409446439" duration="289000" />
-      <workItem from="1787409743915" duration="6977000" />
+      <workItem from="1787409743915" duration="8315000" />
     </task>
     <task id="LOCAL-00001" summary="Intial commit">
       <option name="closed" value="true" />
@@ -167,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1787479515499</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Arranged books in categories and order">
+      <option name="closed" value="true" />
+      <created>1787513252503</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1787513252503</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +186,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Intial commit" />
     <MESSAGE value="Some more cosmetics changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some more cosmetics changes" />
+    <MESSAGE value="Arranged books in categories and order" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arranged books in categories and order" />
   </component>
 </project>
