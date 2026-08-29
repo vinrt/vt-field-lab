@@ -99,3 +99,35 @@ export function MailIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function HomeIcon(props: IconProps) {
+  return <svg {...defaults} {...props}><path d="m3 11 9-8 9 8" /><path d="M5 10v10h14V10M9 20v-6h6v6" /></svg>;
+}
+
+export function FlaskIcon(props: IconProps) {
+  return <svg {...defaults} {...props}><path d="M9 3h6M10 3v6l-5 8.5A2.3 2.3 0 0 0 7 21h10a2.3 2.3 0 0 0 2-3.5L14 9V3" /><path d="M7.5 16h9" /></svg>;
+}
+
+export function ConceptsIcon(props: IconProps) {
+  return <svg {...defaults} {...props}><rect x="4" y="3" width="16" height="18" rx="2" /><path d="m8 12 2.4 2.4L16 8.8" /></svg>;
+}
+
+export function RoadmapIcon(props: IconProps) {
+  return <svg {...defaults} {...props}><circle cx="6" cy="6" r="2" /><circle cx="18" cy="18" r="2" /><path d="M8 6h5a3 3 0 0 1 0 6h-2a3 3 0 0 0 0 6h5" /></svg>;
+}
+
+export function InfoIcon(props: IconProps) {
+  return <svg {...defaults} {...props}><circle cx="12" cy="12" r="9" /><path d="M12 11v6M12 7h.01" /></svg>;
+}
+
+export function BookmarkIcon(props: IconProps) {
+  return <svg {...defaults} {...props}><path d="M6 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18l-6-4-6 4V4Z" /></svg>;
+}
+
+export function UserIcon(props: IconProps) {
+  return <svg {...defaults} {...props}><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>;
+}
+
+export function CloseIcon(props: IconProps) {
+  return <svg {...defaults} {...props}><path d="m6 6 12 12M18 6 6 18" /></svg>;
+}

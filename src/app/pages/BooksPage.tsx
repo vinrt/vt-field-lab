@@ -6,6 +6,7 @@ const subjectFilters = [
   "Foundations",
   "Mathematics",
   "Quantum Physics",
+  "Quantum Computing",
   "Relativity",
   "Mechanics",
   "Cosmology",
@@ -106,12 +107,17 @@ export function BooksPage() {
                   <h2>{book.title}</h2>
                   <h3>{book.author}</h3>
                   <p>{book.description}</p>
+                  {(book.bestFor || book.whyRead) && (
+                    <dl className="book-context">
+                      {book.bestFor && <div><dt>Best for</dt><dd>{book.bestFor}</dd></div>}
+                      {book.whyRead && <div><dt>Why read this</dt><dd>{book.whyRead}</dd></div>}
+                    </dl>
+                  )}
                   <div className="book-tags" aria-label={`Subjects for ${book.title}`}>
                     {book.area.slice(0, 3).map((area) => <span key={area}>{area}</span>)}
                   </div>
-                  {book.relatedSimulationIds?.includes("projectile-motion") && (
-                    <span className="related-label">Pairs with Projectile motion</span>
-                  )}
+                  {book.relatedSimulationIds?.includes("projectile-motion") && <span className="related-label">Pairs with Projectile motion</span>}
+                  {book.relatedSimulationIds?.includes("qubit-bloch-sphere") && <span className="related-label">Pairs with Qubit Explorer</span>}
                 </article>
               ))}
             </div>

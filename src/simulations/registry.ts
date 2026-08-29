@@ -7,6 +7,8 @@ export interface SimulationDefinition {
   tags: string[];
   route: string;
   status: "available" | "planned";
+  featured?: boolean;
+  accent?: "green" | "blue" | "violet" | "amber";
 }
 
 export const simulations: SimulationDefinition[] = [
@@ -19,6 +21,8 @@ export const simulations: SimulationDefinition[] = [
     tags: ["kinematics", "gravity", "vectors"],
     route: "/simulations/projectile-motion",
     status: "available",
+    featured: true,
+    accent: "amber",
   },
   {
     id: "simple-pendulum",
@@ -29,6 +33,8 @@ export const simulations: SimulationDefinition[] = [
     tags: ["oscillation", "energy"],
     route: "/simulations/simple-pendulum",
     status: "planned",
+    featured: true,
+    accent: "violet",
   },
   {
     id: "solar-system-motion",
@@ -39,6 +45,8 @@ export const simulations: SimulationDefinition[] = [
     tags: ["orbits", "solar system", "gravity", "astronomy"],
     route: "/simulations/solar-system-motion",
     status: "available",
+    featured: true,
+    accent: "blue",
   },
   {
     id: "standing-waves",
@@ -49,6 +57,56 @@ export const simulations: SimulationDefinition[] = [
     tags: ["waves", "resonance", "harmonics"],
     route: "/simulations/standing-waves",
     status: "planned",
+    featured: true,
+    accent: "amber",
+  },
+  {
+    id: "qubit-bloch-sphere",
+    title: "Qubit Explorer",
+    description: "Prepare a one-qubit state, apply gates, and connect its Bloch vector to measurement probabilities.",
+    category: "Quantum Computing",
+    difficulty: "beginner",
+    tags: ["qubits", "bloch sphere", "measurement", "gates"],
+    route: "/simulations/qubit-bloch-sphere",
+    status: "available",
+    featured: true,
+    accent: "violet",
+  },
+  {
+    id: "double-slit-interference",
+    title: "Double-slit interference",
+    description: "Explore how probability amplitudes create an interference pattern.",
+    category: "Quantum Physics",
+    difficulty: "intermediate",
+    tags: ["interference", "amplitude", "measurement"],
+    route: "/simulations/double-slit-interference",
+    status: "planned",
+    featured: true,
+    accent: "violet",
+  },
+  {
+    id: "electric-fields",
+    title: "Electric fields",
+    description: "Map force direction and field strength around electric charges.",
+    category: "Electromagnetism",
+    difficulty: "beginner",
+    tags: ["electric field", "force", "charge"],
+    route: "/simulations/electric-fields",
+    status: "planned",
+    featured: true,
+    accent: "green",
+  },
+  {
+    id: "vector-addition",
+    title: "Vector addition",
+    description: "Build resultant vectors from components, magnitude, and direction.",
+    category: "Mathematics",
+    difficulty: "beginner",
+    tags: ["vectors", "components", "linear algebra"],
+    route: "/simulations/vector-addition",
+    status: "planned",
+    featured: true,
+    accent: "blue",
   },
 ];
 

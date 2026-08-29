@@ -5,6 +5,8 @@ export interface BookReference {
   level: "popular" | "beginner" | "undergraduate" | "advanced";
   description: string;
   relatedSimulationIds?: string[];
+  bestFor?: string;
+  whyRead?: string;
 }
 
 export const books: BookReference[] = [
@@ -87,5 +89,55 @@ export const books: BookReference[] = [
     area: ["Mathematics", "Consciousness", "Physics"],
     level: "advanced",
     description: "A wide-ranging argument about computation, mind, mathematics, and the physical laws that may underlie consciousness.",
+  },
+  {
+    title: "Helgoland",
+    author: "Carlo Rovelli",
+    area: ["Quantum Physics", "Foundations"],
+    level: "popular",
+    description: "A conceptual account of quantum theory centered on relations, observations, and what physical properties mean.",
+    relatedSimulationIds: ["qubit-bloch-sphere"],
+    bestFor: "Conceptual foundations",
+    whyRead: "It frames the interpretive questions that appear when a quantum state is measured.",
+  },
+  {
+    title: "Something Deeply Hidden",
+    author: "Sean Carroll",
+    area: ["Quantum Physics", "Foundations"],
+    level: "popular",
+    description: "A clear tour of quantum mechanics, measurement, and the many-worlds interpretation for curious general readers.",
+    relatedSimulationIds: ["qubit-bloch-sphere"],
+    bestFor: "Quantum interpretation",
+    whyRead: "It connects the compact mathematics of a quantum state to the measurement problem.",
+  },
+  {
+    title: "Quantum Computing for the Very Curious",
+    author: "Andy Matuschak and Michael Nielsen",
+    area: ["Quantum Computing", "Quantum Physics"],
+    level: "beginner",
+    description: "An interactive, memory-oriented introduction to qubits, gates, and small quantum circuits.",
+    relatedSimulationIds: ["qubit-bloch-sphere"],
+    bestFor: "A first qubit",
+    whyRead: "It builds operational intuition through small, carefully sequenced ideas.",
+  },
+  {
+    title: "Quantum Computing: A Gentle Introduction",
+    author: "Eleanor Rieffel and Wolfgang Polak",
+    area: ["Quantum Computing", "Mathematics"],
+    level: "undergraduate",
+    description: "A mathematically grounded introduction to quantum information, algorithms, and computational models.",
+    relatedSimulationIds: ["qubit-bloch-sphere"],
+    bestFor: "Structured study",
+    whyRead: "It moves from single-qubit mechanics toward the language used by quantum algorithms.",
+  },
+  {
+    title: "Quantum Computation and Quantum Information",
+    author: "Michael Nielsen and Isaac Chuang",
+    area: ["Quantum Computing", "Quantum Physics"],
+    level: "advanced",
+    description: "The standard comprehensive reference for quantum information theory, circuits, algorithms, and error correction.",
+    relatedSimulationIds: ["qubit-bloch-sphere"],
+    bestFor: "Deep reference",
+    whyRead: "It provides the formal foundation behind the gates and state vectors used in the lab.",
   },
 ];
