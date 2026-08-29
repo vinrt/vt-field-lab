@@ -23,8 +23,6 @@ npm run build
 
 This repository is public. Never commit credentials, `.env` files, private keys, service-account files, IDE workspace state, or personal data. Vite variables prefixed with `VITE_` are bundled into browser code and must always be treated as public configuration.
 
-The repository includes hardened ignore rules and a full-history Gitleaks check for pushes and pull requests. Review [`SECURITY.md`](./SECURITY.md) before adding an external service or configuration value. If a real credential is ever committed, revoke or rotate it immediately before cleaning the repository.
-
 ## Project structure
 
 - `src/simulations/projectile-motion/` contains the pure projectile model, animation view, presets, page, and tests.
