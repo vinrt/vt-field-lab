@@ -1,0 +1,37 @@
+# Dependencies and generated output
+node_modules/
+dist/
+.vite/
+coverage/
+*.tsbuildinfo
+
+# Local environment configuration
+# Keep examples safe and commit-ready, but never commit real environment files.
+.env
+.env.*
+!.env.example
+*.local
+
+# Credentials, private keys, and signing material
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+credentials*.json
+service-account*.json
+secrets*.json
+
+# Editors and machine-specific project metadata
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+
+# Logs and operating-system metadata
+*.log
+.DS_Store
+Thumbs.db

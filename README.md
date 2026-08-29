@@ -1,12 +1,6 @@
 # VT Field Lab
 
-VT Field Lab is an interactive physics and mathematics laboratory built with React, TypeScript, and Vite. The first experiment models projectile motion without air resistance and connects a live canvas visualization to measurements, velocity graphs, equations, and concise learning notes.
-
-## Documentation
-
-- [`architecture.md`](./architecture.md) describes the implemented system, runtime flows, scientific model, rendering, deployment, architectural decisions, and extension boundaries.
-- [`agent.md`](./agent.md) defines repository conventions, scientific rules, testing requirements, and the expected workflow for future coding agents.
-- [`SKILL.md`](./SKILL.md) contains the broader product vision and roadmap.
+VT Field Lab is an interactive physics and mathematics laboratory built with React, TypeScript, and Vite. Its light scientific dashboard connects mechanics, astronomy, quantum concepts, curated reading, and interactive experiments.
 
 ## Run locally
 
@@ -25,14 +19,32 @@ npm run typecheck
 npm run build
 ```
 
+## Public repository safety
+
+This repository is public. Never commit credentials, `.env` files, private keys, service-account files, IDE workspace state, or personal data. Vite variables prefixed with `VITE_` are bundled into browser code and must always be treated as public configuration.
+
+The repository includes hardened ignore rules and a full-history Gitleaks check for pushes and pull requests. Review [`SECURITY.md`](./SECURITY.md) before adding an external service or configuration value. If a real credential is ever committed, revoke or rotate it immediately before cleaning the repository.
+
 ## Project structure
 
-- `src/simulations/projectile-motion/` contains the pure physics model, animation view, presets, page, and model tests.
+- `src/simulations/projectile-motion/` contains the pure projectile model, animation view, presets, page, and tests.
+- `src/simulations/solar-system-motion/` contains the interactive orbital visualization and model tests.
+- `src/simulations/qubit-bloch-sphere/` contains the pure one-qubit model, Bloch-sphere view, controls, and gate/measurement tests.
 - `src/hooks/useProjectileSimulation.ts` owns time progression and Run/Pause/Reset behavior.
 - `src/simulations/registry.ts` is the source of truth for simulation discovery.
 - `src/app/` contains routing, layout, and supporting pages.
 - `src/content/` contains curated learning references.
-- `src/styles/global.css` defines the responsive visual system and dark/light color behavior.
+- `src/styles/global.css` contains the established simulation styles; `src/styles/dashboard.css` owns the dashboard shell, quantum pages, responsive navigation, and explicit themes.
+
+## Main routes
+
+- `/simulations` — scientific dashboard
+- `/simulations/library` — filterable experiment catalog
+- `/simulations/projectile-motion` — Projectile Motion
+- `/simulations/solar-system-motion` — Solar System Motion
+- `/simulations/qubit-bloch-sphere` — Qubit Explorer
+- `/concepts/quantum-physics` — Quantum Physics Basics
+- `/quantum` — quantum learning path
 
 ## Scientific model
 
@@ -43,16 +55,3 @@ The projectile simulation assumes:
 - a point-like projectile launched from ground level;
 - no aerodynamic drag;
 - SI units internally and in the interface.
-
-The model uses the closed-form solution, so its state is deterministic and independent of animation frame rate.
-
-## Cloudflare Pages
-
-Use these settings:
-
-```text
-Build command: npm run build
-Output directory: dist
-```
-
-`public/_redirects` enables direct navigation to client-side routes such as `/simulations/projectile-motion`.

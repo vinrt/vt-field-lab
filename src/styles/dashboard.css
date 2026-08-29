@@ -1,0 +1,489 @@
+:root {
+  color-scheme: light;
+  --color-bg: #f7fbf8;
+  --color-surface: #ffffff;
+  --color-surface-soft: #eef8f4;
+  --color-surface-dark: #0d1620;
+  --color-text: #102026;
+  --color-muted: #65777d;
+  --color-border: #d9e7e2;
+  --color-accent: #12856f;
+  --color-accent-strong: #0d6f5d;
+  --color-accent-soft: #dff7ee;
+  --color-quantum: #7c3aed;
+  --color-quantum-soft: #efe8ff;
+  --color-blue: #3b82f6;
+  --color-amber: #e57b28;
+  --shadow-soft: 0 12px 36px rgba(16, 32, 38, 0.08);
+  --radius-card: 18px;
+  --radius-control: 12px;
+  --sidebar-width: 232px;
+  --topbar-height: 64px;
+  --bg: var(--color-bg);
+  --bg-deep: #edf4f0;
+  --surface: var(--color-surface);
+  --surface-raised: var(--color-surface);
+  --surface-soft: var(--color-surface-soft);
+  --line: color-mix(in srgb, var(--color-border), transparent 24%);
+  --line-strong: var(--color-border);
+  --text: var(--color-text);
+  --text-soft: #34494f;
+  --muted: var(--color-muted);
+  --mint: var(--color-accent);
+  --mint-deep: var(--color-accent-strong);
+  --mint-soft: var(--color-accent-soft);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #071018;
+  --color-surface: #0d1620;
+  --color-surface-soft: #111d2a;
+  --color-text: #eef8f6;
+  --color-muted: #9cafb5;
+  --color-border: #263844;
+  --color-accent: #66e6c0;
+  --color-accent-strong: #8cefd1;
+  --color-accent-soft: rgba(102, 230, 192, 0.12);
+  --color-quantum: #b69cff;
+  --color-quantum-soft: rgba(124, 58, 237, 0.17);
+  --shadow-soft: 0 18px 46px rgba(0, 0, 0, 0.25);
+  --bg-deep: #050b11;
+  --text-soft: #c7d7db;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+body {
+  background-image: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+.dashboard-shell {
+  min-height: 100vh;
+  display: block;
+  background: var(--color-bg);
+}
+
+.application-sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  height: 100svh;
+  padding: 19px 16px 14px;
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 80;
+  overflow-y: auto;
+  background: var(--color-surface);
+}
+
+.sidebar-brand {
+  min-height: 50px;
+  padding: 0 3px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.sidebar-brand-mark {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: var(--color-quantum);
+  position: relative;
+}
+
+.sidebar-brand-mark::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.sidebar-brand-mark svg {
+  width: 36px;
+  height: 36px;
+}
+
+.sidebar-brand > span:last-child {
+  min-width: 0;
+  display: grid;
+  gap: 1px;
+}
+
+.sidebar-brand strong {
+  font: 700 17px "Manrope", sans-serif;
+  white-space: nowrap;
+}
+
+.sidebar-brand small {
+  color: var(--color-muted);
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.sidebar-navigation {
+  margin-top: 28px;
+  display: grid;
+  gap: 4px;
+}
+
+.sidebar-navigation a {
+  min-height: 42px;
+  padding: 0 12px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 21px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sidebar-navigation a svg {
+  width: 18px;
+  height: 18px;
+}
+
+.sidebar-navigation a:hover,
+.sidebar-navigation a.is-active {
+  background: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+}
+
+.sidebar-navigation a small {
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: var(--color-quantum);
+  color: #fff;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.sidebar-spacer {
+  min-height: 25px;
+  flex: 1;
+}
+
+.sidebar-support {
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+}
+
+.sidebar-support strong { font-size: 13px; }
+.sidebar-support p { margin: 8px 0 14px; color: var(--color-muted); font-size: 11px; line-height: 1.55; }
+.sidebar-support a { min-height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: var(--color-accent); color: #fff; font-size: 12px; font-weight: 700; }
+
+.sidebar-theme-control {
+  min-height: 42px;
+  margin-top: 14px;
+  padding: 0 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 20px 1fr 36px;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sidebar-theme-control svg { width: 17px; }
+.sidebar-theme-control input { position: absolute; opacity: 0; pointer-events: none; }
+.sidebar-theme-control i { width: 36px; height: 20px; border-radius: 99px; position: relative; background: var(--color-border); }
+.sidebar-theme-control i::after { content: ""; width: 16px; height: 16px; border-radius: 50%; position: absolute; top: 2px; left: 2px; background: var(--color-surface); transition: transform 160ms ease; }
+.sidebar-theme-control input:checked + i { background: var(--color-accent); }
+.sidebar-theme-control input:checked + i::after { transform: translateX(16px); }
+.sidebar-theme-control:focus-within { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.sidebar-copyright { margin: 14px 5px 0; color: var(--color-muted); font-size: 10px; }
+
+.application-main {
+  min-width: 0;
+  min-height: 100vh;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+}
+
+.application-topbar {
+  height: var(--topbar-height);
+  padding: 0 24px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: color-mix(in srgb, var(--color-surface), transparent 6%);
+}
+
+@supports ((backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px))) {
+  .application-topbar {
+    background: color-mix(in srgb, var(--color-surface), transparent 18%);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+}
+
+.dashboard-menu-button,
+.mobile-dashboard-brand { display: none; }
+
+.global-search {
+  width: min(440px, 48vw);
+  height: 38px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  position: relative;
+  background: var(--color-surface);
+}
+
+.global-search > svg { width: 17px; margin-left: 12px; color: var(--color-muted); }
+.global-search > input { min-width: 0; width: 100%; height: 100%; padding-right: 12px; border: 0; outline: 0; background: transparent; color: var(--color-text); font-size: 13px; }
+.global-search:focus-within { border-color: var(--color-accent); box-shadow: 0 0 0 3px var(--color-accent-soft); }
+
+.global-search-results {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  display: grid;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.global-search-results a { min-height: 52px; padding: 8px 10px; border-radius: 8px; display: grid; grid-template-columns: 68px 1fr; align-items: center; gap: 2px 8px; }
+.global-search-results a:hover { background: var(--color-surface-soft); }
+.global-search-results a > span { grid-row: 1 / 3; color: var(--color-accent); font-size: 9px; font-weight: 700; text-transform: uppercase; }
+.global-search-results a strong { font-size: 12px; }
+.global-search-results a small { overflow: hidden; color: var(--color-muted); font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.global-search-results p { margin: 0; padding: 18px 12px; color: var(--color-muted); font-size: 12px; }
+
+.topbar-actions { margin-left: auto; display: flex; align-items: center; gap: 4px; }
+.topbar-actions > button,
+.topbar-actions > a { width: 40px; height: 40px; border: 0; border-radius: 50%; display: grid; place-items: center; background: transparent; color: var(--text-soft); cursor: pointer; }
+.topbar-actions > button:hover,
+.topbar-actions > a:hover { background: var(--color-surface-soft); color: var(--color-accent); }
+.topbar-actions svg { width: 18px; }
+.topbar-actions .topbar-profile { margin-left: 8px; background: var(--color-accent-soft); color: var(--color-accent); }
+
+.dashboard-page {
+  width: min(1540px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 4px 0 42px;
+}
+
+.dashboard-hero {
+  min-height: 210px;
+  margin-top: 0;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: minmax(430px, .88fr) minmax(420px, 1.12fr);
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(110deg, var(--color-surface-soft), var(--color-surface) 55%, var(--color-quantum-soft));
+}
+
+.dashboard-hero-copy { position: relative; z-index: 2; }
+.dashboard-kicker { color: var(--color-accent); font: 700 9px "IBM Plex Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.dashboard-hero h1 { max-width: 690px; margin: 8px 0 10px; font: 700 clamp(25px, 2.5vw, 39px)/1.08 "Manrope", sans-serif; letter-spacing: -.04em; }
+.dashboard-hero h1 em { color: var(--color-accent); font-style: normal; }
+.dashboard-hero p { max-width: 620px; margin: 0 0 17px; color: var(--text-soft); font-size: 13px; line-height: 1.55; }
+.dashboard-hero-copy > div { display: flex; gap: 10px; }
+.dashboard-primary-action,
+.dashboard-secondary-action { min-height: 42px; padding: 0 18px; border: 1px solid var(--color-border); border-radius: 8px; display: inline-flex; align-items: center; gap: 8px; color: var(--text-soft); background: var(--color-surface); font-size: 12px; font-weight: 700; }
+.dashboard-primary-action { border-color: var(--color-accent); background: var(--color-accent); color: #fff; }
+.dashboard-primary-action svg,
+.dashboard-secondary-action svg { width: 16px; }
+.dashboard-hero-visual { width: 100%; min-width: 0; }
+.dashboard-wave { fill: none; stroke: #26b7ab; stroke-width: 2; opacity: .55; }
+.dashboard-orbit { fill: none; stroke: url(#dashboard-orbit-gradient); stroke-width: 1.2; opacity: .65; }
+.dashboard-particle { fill: #3b82f6; }
+
+.dashboard-section { min-width: 0; }
+.dashboard-section-heading { min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.dashboard-section-heading h2 { margin: 0; font: 700 14px "Manrope", sans-serif; }
+.dashboard-section-heading > a { display: inline-flex; align-items: center; gap: 5px; color: var(--color-muted); font-size: 11px; }
+.dashboard-section-heading > a:hover { color: var(--color-accent); }
+.dashboard-section-heading svg { width: 13px; }
+
+.dashboard-category-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.dashboard-category { min-width: 0; min-height: 88px; padding: 13px; border: 1px solid var(--color-border); border-right: 0; display: grid; grid-template-columns: 42px minmax(0, 1fr) auto; align-items: center; gap: 9px; position: relative; background: var(--color-surface); }
+.dashboard-category:first-child { border-radius: 10px 0 0 10px; }
+.dashboard-category:last-child { border-right: 1px solid var(--color-border); border-radius: 0 10px 10px 0; }
+.dashboard-category:hover { z-index: 1; box-shadow: inset 0 0 0 1px var(--category-color); }
+.dashboard-category > span:nth-child(2) { min-width: 0; display: grid; gap: 5px; }
+.dashboard-category strong { overflow: hidden; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.dashboard-category small { color: var(--color-muted); font-size: 9px; line-height: 1.35; }
+.dashboard-category > b { align-self: start; padding: 2px 5px; border-radius: 4px; background: var(--color-quantum); color: #fff; font-size: 7px; text-transform: uppercase; }
+.dashboard-accent--green { --category-color: var(--color-accent); --category-soft: var(--color-accent-soft); }
+.dashboard-accent--blue { --category-color: var(--color-blue); --category-soft: color-mix(in srgb, var(--color-blue), transparent 88%); }
+.dashboard-accent--amber { --category-color: var(--color-amber); --category-soft: color-mix(in srgb, var(--color-amber), transparent 88%); }
+.dashboard-accent--violet { --category-color: var(--color-quantum); --category-soft: var(--color-quantum-soft); }
+.dashboard-category-icon { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; position: relative; color: var(--category-color); background: var(--category-soft); }
+.dashboard-category-icon::before,
+.dashboard-category-icon::after,
+.dashboard-category-icon i { content: ""; position: absolute; }
+.dashboard-category-icon--orbit::before { width: 25px; height: 25px; border: 1px solid currentColor; border-radius: 50%; }
+.dashboard-category-icon--orbit::after { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.dashboard-category-icon--wave i { width: 28px; height: 15px; background: linear-gradient(135deg, transparent 45%, currentColor 46% 53%, transparent 54%) 0 0/8px 8px; transform: rotate(-12deg); }
+.dashboard-category-icon--field::before,
+.dashboard-category-icon--field::after { width: 14px; height: 27px; border: 1px solid currentColor; border-radius: 50%; }
+.dashboard-category-icon--field::before { transform: translateX(-6px); }.dashboard-category-icon--field::after { transform: translateX(6px); }
+.dashboard-category-icon--rings::before { width: 27px; height: 27px; border: 3px double currentColor; border-radius: 50%; }
+.dashboard-category-icon--axes::before { width: 25px; height: 1px; background: currentColor; }.dashboard-category-icon--axes::after { width: 1px; height: 25px; background: currentColor; }
+.dashboard-category-icon--atom::before { width: 26px; height: 10px; border: 1px solid currentColor; border-radius: 50%; transform: rotate(34deg); }.dashboard-category-icon--atom::after { width: 26px; height: 10px; border: 1px solid currentColor; border-radius: 50%; transform: rotate(-34deg); }.dashboard-category-icon--atom i { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+
+.dashboard-main-grid { margin-top: 8px; display: grid; grid-template-columns: minmax(560px, 1.25fr) minmax(450px, 1fr); gap: 20px; }
+.dashboard-featured-section { padding-right: 20px; border-right: 1px solid var(--color-border); }
+.dashboard-simulation-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.dashboard-simulation-card { min-width: 0; border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; background: var(--color-surface); }
+.dashboard-simulation-card:hover { border-color: var(--color-accent); }
+.dashboard-simulation-card--planned { opacity: .8; }
+.dashboard-simulation-visual { height: 100px; overflow: hidden; position: relative; background: #071521; }
+.dashboard-simulation-visual::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(135, 170, 190, .1) 1px, transparent 1px), linear-gradient(90deg, rgba(135, 170, 190, .08) 1px, transparent 1px); background-size: 22px 22px; }
+.dashboard-simulation-visual i,
+.dashboard-simulation-visual b { position: absolute; display: block; }
+.dashboard-simulation-visual--projectile-motion i { width: 75%; height: 72%; left: 12%; top: 27%; border-top: 2px solid #ffb321; border-radius: 50%; transform: rotate(-9deg); }
+.dashboard-simulation-visual--projectile-motion b { width: 8px; height: 8px; right: 13%; bottom: 18%; border-radius: 50%; background: #ffb321; box-shadow: 0 0 14px #ffb321; }
+.dashboard-simulation-visual--simple-pendulum i { width: 1px; height: 72px; left: 55%; top: 5px; background: #ddd; transform: rotate(-24deg); transform-origin: top; }.dashboard-simulation-visual--simple-pendulum b { width: 16px; height: 16px; left: 31%; bottom: 10px; border-radius: 50%; background: #a855f7; box-shadow: 0 0 12px #a855f7; }
+.dashboard-simulation-visual--solar-system-motion i { width: 82%; height: 45%; left: 9%; top: 27%; border: 1px solid #3b82f6; border-radius: 50%; transform: rotate(-12deg); }.dashboard-simulation-visual--solar-system-motion b { width: 15px; height: 15px; left: 48%; top: 42%; border-radius: 50%; background: #ff9d24; box-shadow: 0 0 16px #ff9d24; }
+.dashboard-simulation-visual--standing-waves i { width: 90%; height: 40px; left: 5%; top: 31px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 60'%3E%3Cpath d='M0 30 Q15 0 30 30 T60 30 T90 30 T120 30 T150 30 T180 30 T210 30 T240 30 T270 30 T300 30' fill='none' stroke='%23f59e0b' stroke-width='3'/%3E%3C/svg%3E") center/contain no-repeat; }
+.dashboard-simulation-visual--qubit-bloch-sphere i,
+.dashboard-simulation-visual--double-slit-interference i { width: 68px; height: 68px; left: calc(50% - 34px); top: 15px; border: 1px solid #a855f7; border-radius: 50%; }.dashboard-simulation-visual--qubit-bloch-sphere i::after { content: ""; width: 2px; height: 48px; position: absolute; left: 33px; top: 9px; background: #44e4bd; transform: rotate(32deg); transform-origin: bottom; }
+.dashboard-simulation-visual--double-slit-interference i { width: 70%; height: 70%; left: 15%; top: 15%; border: 0; border-radius: 0; background: repeating-linear-gradient(90deg, transparent 0 10px, rgba(168,85,247,.8) 11px 14px, transparent 15px 24px); filter: blur(2px); }
+.dashboard-simulation-visual--electric-fields i { width: 8px; height: 8px; left: 50%; top: 46%; border-radius: 50%; background: #34d399; box-shadow: 0 0 0 20px rgba(52,211,153,.06),0 0 0 42px rgba(52,211,153,.04); }.dashboard-simulation-visual--electric-fields b { width: 75%; height: 1px; left: 12%; top: 50%; background: #34d399; }
+.dashboard-simulation-visual--vector-addition i { width: 70px; height: 2px; left: 22%; top: 58%; background: #60a5fa; transform: rotate(-35deg); transform-origin: left; }.dashboard-simulation-visual--vector-addition b { width: 50px; height: 2px; left: 22%; top: 58%; background: #34d399; transform: rotate(22deg); transform-origin: left; }
+.dashboard-simulation-copy { min-height: 120px; padding: 10px; display: flex; flex-direction: column; }
+.dashboard-simulation-copy > span { color: var(--color-accent); font-size: 8px; font-weight: 700; text-transform: uppercase; }
+.dashboard-simulation-copy h3 { margin: 5px 0; font-size: 12px; }
+.dashboard-simulation-copy p { margin: 0; color: var(--color-muted); font-size: 10px; line-height: 1.45; }
+.dashboard-simulation-copy small { margin-top: auto; padding-top: 7px; color: var(--color-accent); font-size: 9px; font-weight: 700; }
+.dashboard-wide-link { min-height: 34px; width: 220px; margin: 12px auto 0; border: 1px solid var(--color-border); border-radius: 7px; display: flex; align-items: center; justify-content: center; gap: 7px; color: var(--text-soft); font-size: 10px; }.dashboard-wide-link svg { width: 13px; }
+
+.dashboard-quantum-column { min-width: 0; display: grid; align-content: start; gap: 8px; }
+.dashboard-quantum-basics,
+.dashboard-quantum-preview,
+.dashboard-roadmap { min-width: 0; }
+.quantum-basics-strip { border: 1px solid var(--color-border); border-radius: 9px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); overflow: hidden; background: var(--color-surface); }
+.quantum-basic-item { min-width: 0; min-height: 116px; padding: 10px; border-right: 1px solid var(--color-border); display: flex; flex-direction: column; align-items: flex-start; gap: 5px; }.quantum-basic-item:last-child { border-right: 0; }
+.quantum-basic-item i { width: 34px; height: 34px; border-radius: 10px; position: relative; background: var(--concept-soft); color: var(--concept-color); }.quantum-basic-item i::before { content: ""; width: 18px; height: 18px; border: 1px solid currentColor; border-radius: 50%; position: absolute; inset: 7px; }.quantum-basic-item i::after { content: ""; width: 5px; height: 5px; border-radius: 50%; position: absolute; left: 15px; top: 15px; background: currentColor; }
+.quantum-basic-item--violet { --concept-color: var(--color-quantum); --concept-soft: var(--color-quantum-soft); }.quantum-basic-item--blue { --concept-color: var(--color-blue); --concept-soft: color-mix(in srgb, var(--color-blue), transparent 88%); }.quantum-basic-item--green { --concept-color: var(--color-accent); --concept-soft: var(--color-accent-soft); }
+.quantum-basic-item strong { font-size: 9px; }.quantum-basic-item span { color: var(--color-muted); font-size: 8px; line-height: 1.35; }
+.quantum-preview-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.quantum-preview-grid > a,
+.quantum-preview-grid > article { min-width: 0; min-height: 135px; padding: 11px; border: 1px solid var(--color-border); border-right: 0; display: flex; flex-direction: column; gap: 5px; background: var(--color-surface); }.quantum-preview-grid > :first-child { border-radius: 9px 0 0 9px; }.quantum-preview-grid > :last-child { border-right: 1px solid var(--color-border); border-radius: 0 9px 9px 0; }
+.quantum-preview-grid i { width: 48px; height: 42px; align-self: center; display: grid; place-items: center; position: relative; color: var(--color-quantum); font: normal 700 14px "IBM Plex Mono", monospace; }
+.quantum-preview-orbit::before,
+.quantum-preview-orbit::after { content: ""; width: 40px; height: 15px; border: 1px solid currentColor; border-radius: 50%; position: absolute; top: 13px; left: 4px; transform: rotate(45deg); }.quantum-preview-orbit::after { transform: rotate(-45deg); }
+.quantum-preview-circuit::before { content: ""; width: 44px; height: 1px; background: currentColor; position: absolute; top: 21px; }.quantum-preview-circuit::after { content: "H"; width: 20px; height: 20px; border: 1px solid currentColor; display: grid; place-items: center; position: absolute; left: 14px; top: 11px; font-size: 10px; }
+.quantum-preview-grid strong { font-size: 9px; }.quantum-preview-grid span { color: var(--color-muted); font-size: 8px; line-height: 1.35; }.quantum-preview-grid small { margin-top: auto; color: var(--color-quantum); font-size: 8px; }
+.dashboard-roadmap ol { margin: 0; padding: 7px 12px; border: 1px solid var(--color-border); border-radius: 9px; display: grid; gap: 0; background: var(--color-surface); list-style: none; }
+.dashboard-roadmap li { min-height: 31px; display: grid; grid-template-columns: 22px 1fr auto; align-items: center; gap: 7px; position: relative; }.dashboard-roadmap li:not(:last-child)::after { content: ""; width: 1px; height: 12px; position: absolute; left: 9px; bottom: -6px; background: var(--color-border); }.dashboard-roadmap li > b { width: 19px; height: 19px; border-radius: 50%; display: grid; place-items: center; background: var(--color-quantum-soft); color: var(--color-quantum); font-size: 8px; }.dashboard-roadmap li > span { min-width: 0; display: flex; align-items: baseline; gap: 5px; }.dashboard-roadmap li strong { font-size: 9px; }.dashboard-roadmap li small { overflow: hidden; color: var(--color-muted); font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }.dashboard-roadmap li em { padding: 3px 6px; border-radius: 5px; background: var(--color-surface-soft); color: var(--color-muted); font-size: 7px; font-style: normal; }
+
+.dashboard-values { margin-top: 16px; padding: 14px 0; border-top: 1px solid var(--color-border); display: grid; grid-template-columns: repeat(4, 1fr); }.dashboard-values > div { padding: 0 18px; border-right: 1px solid var(--color-border); display: flex; gap: 11px; }.dashboard-values > div:last-child { border-right: 0; }.dashboard-values i { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; flex: 0 0 auto; background: var(--color-accent-soft); color: var(--color-accent); font-size: 8px; font-style: normal; }.dashboard-values span { display: grid; gap: 2px; }.dashboard-values strong { font-size: 10px; }.dashboard-values small { color: var(--color-muted); font-size: 8px; line-height: 1.35; }
+
+.dashboard-footer { background: var(--color-surface); }
+.dashboard-footer .page-width { width: min(1280px, calc(100% - 48px)); }
+
+/* Concepts and quantum learning pages */
+.concept-index-page,
+.quantum-concepts-page,
+.quantum-hub-page { padding: 62px 0 90px; }
+.concept-hero,
+.quantum-hub-hero { max-width: 850px; margin-bottom: 48px; }.concept-hero > span,
+.quantum-hub-hero > span,
+.quantum-concepts-hero > div:first-child > span { color: var(--color-accent); font: 700 10px "IBM Plex Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }.concept-hero h1,
+.quantum-hub-hero h1 { margin: 13px 0 16px; font: 700 clamp(38px, 6vw, 68px)/1.02 "Manrope", sans-serif; letter-spacing: -.05em; }.concept-hero p,
+.quantum-hub-hero p { max-width: 700px; margin: 0; color: var(--color-muted); font-size: 16px; line-height: 1.7; }
+.concept-area-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }.concept-area-grid > a { min-height: 260px; padding: 28px; border: 1px solid var(--color-border); border-radius: var(--radius-card); display: grid; grid-template-columns: 1fr auto; align-content: start; background: var(--color-surface); }.concept-area-grid > a:hover { border-color: var(--color-accent); box-shadow: var(--shadow-soft); }.concept-area-grid > a > span { color: var(--color-accent); font: 700 10px "IBM Plex Mono", monospace; }.concept-area-grid > a > small { color: var(--color-muted); font-size: 10px; text-transform: uppercase; }.concept-area-grid h2 { grid-column: 1 / -1; margin: 42px 0 9px; font-size: 25px; }.concept-area-grid p { grid-column: 1 / -1; margin: 0; color: var(--color-muted); line-height: 1.6; }.concept-area-grid a > strong { grid-column: 1 / -1; margin-top: auto; display: flex; align-items: center; gap: 7px; color: var(--color-accent); font-size: 12px; }.concept-area-grid svg { width: 14px; }.concept-area-grid .is-planned { opacity: .72; }
+
+.quantum-concepts-hero { margin-bottom: 34px; padding: 34px; border: 1px solid var(--color-border); border-radius: var(--radius-card); display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 30px; background: linear-gradient(110deg, var(--color-surface), var(--color-quantum-soft)); }.quantum-concepts-hero h1 { margin: 10px 0; font: 700 clamp(36px, 5vw, 58px) "Manrope", sans-serif; letter-spacing: -.04em; }.quantum-concepts-hero p { max-width: 720px; margin: 0; color: var(--color-muted); line-height: 1.6; }.quantum-hero-equation { min-width: 285px; padding: 22px; border: 1px solid color-mix(in srgb, var(--color-quantum), transparent 60%); border-radius: 14px; display: grid; gap: 9px; background: var(--color-surface); }.quantum-hero-equation i { color: var(--color-quantum); font: normal 700 9px "IBM Plex Mono", monospace; text-transform: uppercase; }.quantum-hero-equation strong { font: 500 18px "IBM Plex Mono", monospace; }.quantum-hero-equation small { color: var(--color-muted); font: 12px "IBM Plex Mono", monospace; }
+.quantum-concept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }.quantum-concept-card { min-width: 0; min-height: 330px; padding: 24px; border: 1px solid var(--color-border); border-radius: 16px; display: flex; flex-direction: column; background: var(--color-surface); scroll-margin-top: 90px; }.quantum-concept-card > div:first-child { display: flex; justify-content: space-between; color: var(--concept-color); font: 700 9px "IBM Plex Mono", monospace; }.quantum-concept-card > div:first-child i { width: 35px; height: 35px; border-radius: 50%; position: relative; background: var(--concept-soft); }.quantum-concept-card > div:first-child i::before,
+.quantum-concept-card > div:first-child i::after { content: ""; width: 22px; height: 8px; border: 1px solid var(--concept-color); border-radius: 50%; position: absolute; left: 6px; top: 13px; transform: rotate(40deg); }.quantum-concept-card > div:first-child i::after { transform: rotate(-40deg); }.quantum-concept-card--violet { --concept-color: var(--color-quantum); --concept-soft: var(--color-quantum-soft); }.quantum-concept-card--blue { --concept-color: var(--color-blue); --concept-soft: color-mix(in srgb, var(--color-blue), transparent 88%); }.quantum-concept-card--green { --concept-color: var(--color-accent); --concept-soft: var(--color-accent-soft); }.quantum-concept-card h2 { margin: 22px 0 7px; font-size: 21px; }.quantum-concept-card p { color: var(--color-muted); font-size: 12px; line-height: 1.6; }.quantum-concept-card .quantum-concept-summary { margin-bottom: 5px; color: var(--text-soft); font-weight: 600; }.quantum-concept-card code { padding: 12px; border-radius: 8px; display: block; background: var(--concept-soft); color: var(--concept-color); font-size: 12px; }.quantum-concept-card footer { margin-top: auto; padding-top: 18px; display: flex; justify-content: space-between; gap: 10px; }.quantum-concept-card footer a { display: flex; align-items: center; gap: 6px; color: var(--concept-color); font-size: 10px; font-weight: 700; }.quantum-concept-card footer svg { width: 13px; }
+.quantum-next-step { margin-top: 18px; padding: 28px 32px; border-radius: 16px; display: flex; align-items: center; justify-content: space-between; gap: 30px; background: var(--color-surface-dark); color: #eef8f6; }.quantum-next-step span { color: #70e4c3; font-size: 10px; text-transform: uppercase; }.quantum-next-step h2 { margin: 6px 0; font-size: 24px; }.quantum-next-step p { margin: 0; color: #aebfc5; }.quantum-next-step > a { min-height: 44px; padding: 0 18px; border-radius: 8px; display: flex; align-items: center; gap: 8px; flex: 0 0 auto; background: #70e4c3; color: #071018; font-size: 12px; font-weight: 700; }.quantum-next-step svg { width: 14px; }
+
+.quantum-hub-hero > div { margin-top: 25px; display: flex; gap: 10px; }.quantum-hub-hero > div a { min-height: 44px; padding: 0 18px; border: 1px solid var(--color-border); border-radius: 8px; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; }.quantum-hub-hero > div a:first-child { border-color: var(--color-quantum); background: var(--color-quantum); color: #fff; }.quantum-hub-hero svg { width: 14px; }.quantum-hub-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 22px; }.quantum-sequence,
+.quantum-now-panel { padding: 26px; border: 1px solid var(--color-border); border-radius: var(--radius-card); background: var(--color-surface); }.quantum-sequence .dashboard-section-heading > span { color: var(--color-muted); font-size: 10px; }.quantum-sequence ol { margin: 15px 0 0; padding: 0; list-style: none; }.quantum-sequence li { min-height: 92px; padding: 14px 0; border-top: 1px solid var(--color-border); display: grid; grid-template-columns: 42px 1fr auto; align-items: center; gap: 16px; opacity: .55; }.quantum-sequence li.is-active { opacity: 1; }.quantum-sequence li > b { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--color-quantum-soft); color: var(--color-quantum); }.quantum-sequence li small { color: var(--color-quantum); font-size: 9px; text-transform: uppercase; }.quantum-sequence li h3 { margin: 3px 0; font-size: 16px; }.quantum-sequence li p { margin: 0; color: var(--color-muted); font-size: 11px; }.quantum-sequence li > span { color: var(--color-muted); font-size: 10px; }.quantum-now-panel > span { color: var(--color-quantum); font: 700 9px "IBM Plex Mono", monospace; text-transform: uppercase; }.quantum-now-orbit { height: 180px; margin: 18px 0; position: relative; }.quantum-now-orbit::before,
+.quantum-now-orbit::after { content: ""; width: 150px; height: 60px; border: 1px solid var(--color-quantum); border-radius: 50%; position: absolute; left: calc(50% - 75px); top: 58px; transform: rotate(30deg); }.quantum-now-orbit::after { transform: rotate(-30deg); }.quantum-now-orbit i { width: 118px; height: 118px; border: 1px solid color-mix(in srgb, var(--color-quantum), transparent 50%); border-radius: 50%; position: absolute; left: calc(50% - 59px); top: 29px; }.quantum-now-orbit b { width: 12px; height: 12px; border-radius: 50%; position: absolute; left: calc(50% - 6px); top: 82px; background: var(--color-quantum); box-shadow: 0 0 25px var(--color-quantum); }.quantum-now-panel h2 { margin: 0 0 8px; }.quantum-now-panel p { color: var(--color-muted); line-height: 1.6; }.quantum-now-panel > a { display: inline-flex; align-items: center; gap: 7px; color: var(--color-quantum); font-size: 12px; font-weight: 700; }.quantum-now-panel svg { width: 14px; }
+
+/* Qubit lab */
+.quantum-lab-page { padding: 28px 0 84px; background: var(--color-bg); }.quantum-page-width { width: min(1220px, calc(100% - 44px)); margin-inline: auto; }.quantum-breadcrumbs { margin-bottom: 20px; }.quantum-lab-header { margin-bottom: 24px; display: flex; align-items: end; justify-content: space-between; gap: 35px; }.quantum-kicker { color: var(--color-quantum); font: 700 9px "IBM Plex Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }.quantum-lab-header h1 { margin: 8px 0; font: 700 clamp(36px, 5vw, 56px) "Manrope", sans-serif; letter-spacing: -.05em; }.quantum-lab-header p { max-width: 670px; margin: 0; color: var(--color-muted); line-height: 1.6; }.quantum-state-equation { min-width: 390px; padding: 16px 18px; border: 1px solid color-mix(in srgb, var(--color-quantum), transparent 55%); border-radius: 12px; display: grid; gap: 7px; background: var(--color-quantum-soft); }.quantum-state-equation span { color: var(--color-quantum); font: 700 8px "IBM Plex Mono", monospace; text-transform: uppercase; }.quantum-state-equation strong { overflow-wrap: anywhere; font: 500 12px "IBM Plex Mono", monospace; }
+.qubit-workspace { border: 1px solid var(--color-border); border-radius: var(--radius-card); display: grid; grid-template-columns: minmax(0, 1fr) 360px; overflow: hidden; background: var(--color-surface); box-shadow: var(--shadow-soft); }.bloch-panel { min-width: 0; min-height: 600px; padding: 25px; border-right: 1px solid var(--color-border); display: flex; flex-direction: column; background: radial-gradient(circle at 50% 45%, var(--color-quantum-soft), transparent 55%), var(--color-surface-dark); color: #eaf6f3; }.bloch-panel-heading { display: flex; justify-content: space-between; align-items: start; }.bloch-panel-heading span { color: #9fb2b9; font-size: 8px; text-transform: uppercase; }.bloch-panel-heading h2 { margin: 5px 0 0; font-size: 22px; }.live-indicator { display: flex; align-items: center; gap: 7px; }.live-indicator i { width: 6px; height: 6px; border-radius: 50%; background: #67e8c5; box-shadow: 0 0 8px #67e8c5; }.bloch-sphere { width: min(100%, 520px); margin: auto; overflow: visible; }.bloch-outline { stroke: #8b5cf6; stroke-width: 1.2; }.bloch-grid { fill: none; stroke: rgba(184, 164, 255, .38); stroke-width: 1; stroke-dasharray: 4 5; }.bloch-grid--solid { stroke-dasharray: none; }.bloch-axis { stroke: rgba(230, 241, 245, .34); stroke-width: 1; }.bloch-axis--faint { stroke-dasharray: 4 5; }.bloch-sphere text { fill: #b9c9cf; font: 12px "IBM Plex Mono", monospace; }.bloch-state-vector { stroke: url(#state-vector); stroke-width: 4; stroke-linecap: round; }.bloch-state-point { fill: #c4b5fd; stroke: #fff; stroke-width: 2; }.bloch-origin { fill: #70e4c3; }.bloch-coordinates { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid rgba(200,220,226,.14); }.bloch-coordinates span { min-height: 44px; border-right: 1px solid rgba(200,220,226,.14); display: flex; align-items: center; justify-content: center; gap: 8px; color: #9fb2b9; font: 10px "IBM Plex Mono", monospace; }.bloch-coordinates span:last-child { border-right: 0; }.bloch-coordinates strong { color: #eaf6f3; }
+.qubit-controls { padding: 23px; background: var(--color-surface); }.qubit-controls-heading { padding-bottom: 17px; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; }.qubit-controls-heading span { color: var(--color-muted); font-size: 8px; text-transform: uppercase; }.qubit-controls-heading h2 { margin: 4px 0 0; font-size: 21px; }.qubit-reset { min-height: 36px; padding: 0 10px; border: 1px solid var(--color-border); border-radius: 7px; display: flex; align-items: center; gap: 6px; background: transparent; color: var(--color-muted); cursor: pointer; font-size: 10px; }.qubit-reset svg { width: 14px; }.quantum-range-control { padding: 17px 0; border-bottom: 1px solid var(--color-border); display: grid; grid-template-columns: 1fr 68px; gap: 11px; }.quantum-range-control > span { grid-column: 1 / -1; display: flex; justify-content: space-between; color: var(--color-muted); font-size: 11px; }.quantum-range-control > span strong { color: var(--color-quantum); font: 11px "IBM Plex Mono", monospace; }.quantum-range-control input[type="range"] { width: 100%; accent-color: var(--color-quantum); }.quantum-range-control input[type="number"] { width: 68px; min-height: 34px; padding: 0 6px; border: 1px solid var(--color-border); border-radius: 6px; background: var(--color-surface); color: var(--color-text); text-align: right; }.gate-control-group { padding: 17px 0; border-bottom: 1px solid var(--color-border); }.gate-control-group > span { color: var(--color-muted); font-size: 9px; text-transform: uppercase; }.gate-control-group > div { margin-top: 9px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }.gate-control-group button { min-height: 52px; border: 1px solid var(--color-border); border-radius: 7px; display: grid; place-items: center; gap: 2px; background: var(--color-surface); cursor: pointer; }.gate-control-group button:hover { border-color: var(--color-quantum); background: var(--color-quantum-soft); }.gate-control-group strong { color: var(--color-quantum); font: 700 14px "IBM Plex Mono", monospace; }.gate-control-group small { color: var(--color-muted); font-size: 8px; }.probability-display { padding: 15px 0; display: grid; grid-template-columns: 1fr; gap: 5px; }.probability-display > div:nth-child(odd) { display: flex; justify-content: space-between; color: var(--color-muted); font-size: 10px; }.probability-display strong { color: var(--color-text); font: 11px "IBM Plex Mono", monospace; }.probability-track { height: 5px; overflow: hidden; background: var(--color-surface-soft); }.probability-track i { height: 100%; display: block; background: var(--color-accent); transition: width 180ms ease; }.probability-track--one i { background: var(--color-quantum); }.measure-button { width: 100%; min-height: 44px; border: 0; border-radius: 8px; background: var(--color-quantum); color: #fff; cursor: pointer; font-weight: 700; font-size: 11px; }.measurement-result { min-height: 32px; margin: 9px 0 0; color: var(--color-muted); font-size: 10px; line-height: 1.45; text-align: center; }.quantum-lab-notes { margin-top: 18px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--color-border); }.quantum-lab-notes article { padding: 24px; border-right: 1px solid var(--color-border); }.quantum-lab-notes article:last-child { border-right: 0; }.quantum-lab-notes span { color: var(--color-quantum); font: 9px "IBM Plex Mono", monospace; }.quantum-lab-notes h2 { margin: 22px 0 8px; font-size: 16px; }.quantum-lab-notes p { margin: 0; color: var(--color-muted); font-size: 11px; line-height: 1.6; }.qubit-reading-link { margin-top: 18px; padding: 20px 24px; border: 1px solid var(--color-border); border-radius: 12px; display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 13px; background: var(--color-surface); }.qubit-reading-link > svg { width: 28px; color: var(--color-quantum); }.qubit-reading-link div { display: grid; gap: 4px; }.qubit-reading-link span { color: var(--color-muted); font-size: 8px; text-transform: uppercase; }.qubit-reading-link strong { font-size: 12px; }.qubit-reading-link > a { color: var(--color-quantum); font-size: 11px; font-weight: 700; }
+
+.book-context { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid var(--color-border); display: grid; gap: 8px; }.book-context div { display: grid; gap: 2px; }.book-context dt { color: var(--color-accent); font-size: 8px; font-weight: 700; text-transform: uppercase; }.book-context dd { margin: 0; color: var(--color-muted); font-size: 10px; line-height: 1.45; }
+
+@media (max-width: 1280px) {
+  .dashboard-category-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }.dashboard-category { border-right: 1px solid var(--color-border); border-radius: 9px !important; }
+  .dashboard-main-grid { grid-template-columns: 1fr; }.dashboard-featured-section { padding-right: 0; border-right: 0; }.dashboard-simulation-grid { grid-template-columns: repeat(4, 1fr); }
+  .dashboard-quantum-column { grid-template-columns: 1fr 1fr; column-gap: 16px; }.dashboard-quantum-basics { grid-column: 1 / -1; }
+}
+
+@media (max-width: 1024px) {
+  .application-sidebar { transform: translateX(-100%); transition: transform 180ms ease; box-shadow: var(--shadow-soft); }.application-sidebar.is-open { transform: translateX(0); }.sidebar-scrim { border: 0; position: fixed; inset: 0; z-index: 70; background: rgba(4, 11, 17, .45); }
+  .application-main { margin-left: 0; }.dashboard-menu-button { width: 42px; height: 42px; border: 0; display: grid; place-items: center; flex: 0 0 auto; background: transparent; color: var(--color-text); }.dashboard-menu-button > svg { width: 21px; }.dashboard-menu-button > span { display: grid; gap: 4px; }.dashboard-menu-button i { width: 20px; height: 2px; display: block; background: currentColor; }
+  .mobile-dashboard-brand { display: flex; align-items: center; gap: 7px; font-size: 13px; }.mobile-dashboard-brand svg { width: 22px; color: var(--color-quantum); }
+  .dashboard-hero { grid-template-columns: 1fr; }.dashboard-hero-visual { max-height: 210px; }.dashboard-main-grid { display: block; }.dashboard-quantum-column { margin-top: 8px; }
+  .quantum-concept-grid { grid-template-columns: repeat(2, 1fr); }.qubit-workspace { grid-template-columns: minmax(0, 1fr) 330px; }.quantum-state-equation { min-width: 330px; }
+}
+
+@media (max-width: 760px) {
+  .application-topbar { height: 58px; padding: 0 12px; gap: 8px; }.mobile-dashboard-brand strong { display: none; }.global-search { width: auto; flex: 1; }.topbar-actions > a:not(.topbar-profile),
+  .topbar-actions > button { display: none; }.topbar-actions .topbar-profile { width: 36px; height: 36px; margin-left: 0; }
+  .dashboard-page { width: min(100% - 24px, 680px); padding-top: 0; }.dashboard-hero { min-height: auto; padding: 22px; grid-template-columns: 1fr; }.dashboard-hero h1 { font-size: 32px; }.dashboard-hero-copy > div { flex-wrap: wrap; }.dashboard-hero-visual { margin: 8px 0 -16px; }
+  .dashboard-category-grid { grid-template-columns: repeat(2, 1fr); }.dashboard-simulation-grid { grid-template-columns: repeat(2, 1fr); }.dashboard-quantum-column { display: block; }.dashboard-quantum-column > section { margin-top: 8px; }.quantum-basics-strip { grid-template-columns: repeat(2, 1fr); }.quantum-basic-item { border-bottom: 1px solid var(--color-border); }.quantum-basic-item:nth-child(2n) { border-right: 0; }.quantum-basic-item:last-child { grid-column: 1 / -1; }.quantum-preview-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }.quantum-preview-grid > a,
+  .quantum-preview-grid > article { border-right: 1px solid var(--color-border); border-radius: 8px !important; }.dashboard-values { grid-template-columns: repeat(2, 1fr); gap: 15px 0; }.dashboard-values > div:nth-child(2) { border-right: 0; }
+  .concept-index-page,
+  .quantum-concepts-page,
+  .quantum-hub-page { padding: 40px 0 65px; }.concept-area-grid,
+  .quantum-concept-grid,
+  .quantum-hub-grid { grid-template-columns: 1fr; }.quantum-concepts-hero { padding: 24px; grid-template-columns: 1fr; }.quantum-hero-equation { min-width: 0; }.quantum-next-step { align-items: flex-start; flex-direction: column; }
+  .quantum-lab-header { align-items: stretch; flex-direction: column; }.quantum-state-equation { min-width: 0; }.qubit-workspace { display: flex; flex-direction: column; }.bloch-panel { min-height: 510px; border-right: 0; border-bottom: 1px solid var(--color-border); }.quantum-lab-notes { grid-template-columns: 1fr; }.quantum-lab-notes article { border-right: 0; border-bottom: 1px solid var(--color-border); }.qubit-reading-link { grid-template-columns: 34px 1fr; }.qubit-reading-link > a { grid-column: 2; }
+  .dashboard-footer .page-width { width: calc(100% - 28px); }
+}
+
+@media (max-width: 430px) {
+  .global-search > input::placeholder { color: transparent; }.dashboard-hero h1 { font-size: 28px; }.dashboard-primary-action,
+  .dashboard-secondary-action { width: 100%; justify-content: center; }.dashboard-category-grid { grid-template-columns: 1fr; }.dashboard-simulation-grid { grid-template-columns: 1fr; }.dashboard-simulation-visual { height: 130px; }.dashboard-values { grid-template-columns: 1fr; }.dashboard-values > div { border-right: 0; }.quantum-basics-strip,
+  .quantum-preview-grid { grid-template-columns: 1fr; }.quantum-basic-item,
+  .quantum-basic-item:nth-child(2n),
+  .quantum-basic-item:last-child { grid-column: auto; border-right: 0; }.quantum-preview-grid > a,
+  .quantum-preview-grid > article { min-height: 120px; }.dashboard-roadmap li > span { display: grid; }.concept-hero h1,
+  .quantum-hub-hero h1 { font-size: 38px; }.concept-area-grid > a { min-height: 230px; padding: 22px; }.quantum-concept-card { min-height: 0; }.quantum-concept-card footer { align-items: flex-start; flex-direction: column; }.quantum-hub-hero > div { flex-direction: column; }.quantum-hub-hero > div a { justify-content: center; }.quantum-sequence li { grid-template-columns: 36px 1fr; }.quantum-sequence li > span { grid-column: 2; }.quantum-page-width { width: calc(100% - 24px); }.bloch-panel { min-height: 430px; padding: 18px; }.qubit-controls { padding: 18px; }.qubit-reading-link { padding: 17px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .application-sidebar,
+  .sidebar-theme-control i::after,
+  .probability-track i { transition: none !important; }
+}
