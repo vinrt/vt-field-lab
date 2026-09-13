@@ -3182,6 +3182,61 @@ body {
   color: #9a3f2f;
 }
 
+.footer-instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 9px 11px;
+  border: 1px solid var(--line-strong);
+  border-radius: 7px;
+  color: var(--muted);
+  font-size: 13px;
+  transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.footer-instagram-link:hover {
+  border-color: var(--mint);
+  color: var(--mint);
+  transform: translateY(-1px);
+}
+
+.footer-instagram-icon {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #f9ce34, #ee2a7b 52%, #6228d7);
+  color: #fff;
+}
+
+.footer-instagram-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.footer-instagram-link > span:nth-child(2) {
+  display: grid;
+  gap: 2px;
+}
+
+.footer-instagram-link strong {
+  color: var(--text);
+  font-size: 12px;
+}
+
+.footer-instagram-link small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.footer-instagram-arrow {
+  margin-left: 3px;
+  color: var(--mint);
+  font-size: 16px;
+}
+
 /* Simulation library visuals keyed by simulation id */
 .library-icon--projectile-motion i,
 .library-icon--simple-pendulum i {
