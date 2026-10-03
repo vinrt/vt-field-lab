@@ -32,7 +32,7 @@ export const simulations: SimulationDefinition[] = [
     difficulty: "beginner",
     tags: ["oscillation", "energy"],
     route: "/simulations/simple-pendulum",
-    status: "planned",
+    status: "available",
     featured: true,
     accent: "violet",
   },

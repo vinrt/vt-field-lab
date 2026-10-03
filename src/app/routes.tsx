@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { ProjectileMotionPage } from "../simulations/projectile-motion/ProjectileMotionPage";
+import { SimplePendulumPage } from "../simulations/simple-pendulum/SimplePendulumPage";
 import { SolarSystemMotionPage } from "../simulations/solar-system-motion/SolarSystemMotionPage";
 import { QubitExplorerPage } from "../simulations/qubit-bloch-sphere/QubitExplorerPage";
 import { AppShell } from "./layout/AppShell";
@@ -22,6 +23,7 @@ export function AppRoutes() {
         <Route path="simulations" element={<SimulationsPage />} />
         <Route path="simulations/library" element={<SimulationLibraryPage />} />
         <Route path="simulations/projectile-motion" element={<ProjectileMotionPage />} />
+        <Route path="simulations/simple-pendulum" element={<SimplePendulumPage />} />
         <Route path="simulations/solar-system-motion" element={<SolarSystemMotionPage />} />
         <Route path="simulations/qubit-bloch-sphere" element={<QubitExplorerPage />} />
         <Route path="concepts" element={<ConceptsPage />} />

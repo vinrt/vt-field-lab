@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { books } from "../../content/books";
 import { quantumConcepts } from "../../content/quantum";
+import { siteLinks } from "../../config/site";
 import { simulations } from "../../simulations/registry";
 import {
   AtomIcon,
@@ -131,7 +132,7 @@ export function AppShell() {
               <strong>Stay curious.</strong>
               <label><span className="visually-hidden">Email address</span><input type="email" name="email" placeholder="you@example.com" autoComplete="email" required value={signupEmail} onChange={(event) => { setSignupEmail(event.target.value); if (signupStatus !== "idle") setSignupStatus("idle"); }} /><button type="submit" aria-label="Subscribe" disabled={signupStatus === "sending"}><MailIcon /></button></label>
               <span className={`signup-status signup-status--${signupStatus}`} role="status">{signupStatus === "sending" && "Sending..."}{signupStatus === "sent" && "Sent. Thanks for subscribing."}{signupStatus === "error" && "Could not send. Check hosting form setup."}</span>
-              <a className="footer-instagram-link" href="https://www.instagram.com/asi_tattvam?stkn=MmJvanRhb3NmN3Zq&utm_source=qr" target="_blank" rel="noreferrer"><span className="footer-instagram-icon"><InstagramIcon /></span><span><strong>Follow the curiosity</strong><small>@asi_tattvam on Instagram</small></span><span className="footer-instagram-arrow">↗</span></a>
+              {siteLinks.instagram && <a className="footer-instagram-link" href={siteLinks.instagram} target="_blank" rel="noreferrer"><span className="footer-instagram-icon"><InstagramIcon /></span><span><strong>Follow the curiosity</strong><small>@asi_tattvam on Instagram</small></span><span className="footer-instagram-arrow">↗</span></a>}
             </form>
             <span className="footer-legal">© {new Date().getFullYear()} VT Field Lab</span>
           </div>

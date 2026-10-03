@@ -26,6 +26,7 @@ This repository is public. Never commit credentials, `.env` files, private keys,
 ## Project structure
 
 - `src/simulations/projectile-motion/` contains the pure projectile model, animation view, presets, page, and tests.
+- `src/simulations/simple-pendulum/` contains the analytical small-angle model, SVG view, controls, energy graph, and tests.
 - `src/simulations/solar-system-motion/` contains the interactive orbital visualization and model tests.
 - `src/simulations/qubit-bloch-sphere/` contains the pure one-qubit model, Bloch-sphere view, controls, and gate/measurement tests.
 - `src/hooks/useProjectileSimulation.ts` owns time progression and Run/Pause/Reset behavior.
@@ -39,6 +40,7 @@ This repository is public. Never commit credentials, `.env` files, private keys,
 - `/simulations` — scientific dashboard
 - `/simulations/library` — filterable experiment catalog
 - `/simulations/projectile-motion` — Projectile Motion
+- `/simulations/simple-pendulum` — Simple Pendulum
 - `/simulations/solar-system-motion` — Solar System Motion
 - `/simulations/qubit-bloch-sphere` — Qubit Explorer
 - `/concepts/quantum-physics` — Quantum Physics Basics
