@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a6622e5c-b618-42aa-8ad2-79bf58673cc3" name="Changes" comment="Arranged books in categories and order">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pages/SimulationsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/SimulationsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout/AppShell.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout/AppShell.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/routes.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/simulations/registry.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulations/registry.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,41 +25,41 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "vinrt"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;vinrt&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/vinrt/vt-field-lab.git",
-    "accountId": "374b2157-306a-491a-b0ea-13618fa7dbf3"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/vinrt/vt-field-lab.git&quot;,
+    &quot;accountId&quot;: &quot;374b2157-306a-491a-b0ea-13618fa7dbf3&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.5520470093854173" />
-      <entry key="MS500" value="4.07135942288558" />
-      <entry key="S2" value="12.732971796507291" />
-      <entry key="S5" value="27.241708421629347" />
-      <entry key="S10" value="42.65957030453094" />
-      <entry key="S30" value="69.11368789071442" />
-      <entry key="S60" value="83.24746543615295" />
-      <entry key="M2" value="98.42154801272225" />
-      <entry key="M5" value="136.77749308953236" />
-      <entry key="M10" value="214.3613890453958" />
-      <entry key="M15" value="290.01243402377594" />
-      <entry key="M30" value="439.98994351791725" />
-      <entry key="H1" value="566.7009126126411" />
-      <entry key="H2" value="653.3600465238397" />
-      <entry key="H4" value="717.690114626859" />
-      <entry key="D1" value="861.4137727812498" />
-      <entry key="W1" value="933.1158477226023" />
+      <entry key="MS100" value="1.5214754387033895" />
+      <entry key="MS500" value="2.7281481324283763" />
+      <entry key="S2" value="9.157079407207826" />
+      <entry key="S5" value="18.626315605792463" />
+      <entry key="S10" value="36.242801939882284" />
+      <entry key="S30" value="90.23060849027476" />
+      <entry key="S60" value="142.7995342472495" />
+      <entry key="M2" value="213.3756381808763" />
+      <entry key="M5" value="320.6196043308426" />
+      <entry key="M10" value="428.6410309783202" />
+      <entry key="M15" value="516.2681968808428" />
+      <entry key="M30" value="686.3800242693205" />
+      <entry key="H1" value="832.1742029162688" />
+      <entry key="H2" value="932.7843072700948" />
+      <entry key="H4" value="1005.5546680721053" />
+      <entry key="D1" value="1157.4192902642706" />
+      <entry key="W1" value="1230.8094961580716" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -79,23 +81,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.5191291140373036" />
-      <entry key="MS500" value="4.052859269686147" />
-      <entry key="S2" value="12.718557818549135" />
-      <entry key="S5" value="27.229662248373653" />
-      <entry key="S10" value="42.650388998241546" />
-      <entry key="S30" value="69.10880186309643" />
-      <entry key="S60" value="83.24450939057358" />
-      <entry key="M2" value="98.41976719411751" />
-      <entry key="M5" value="136.77642237299008" />
-      <entry key="M10" value="214.36048137524494" />
-      <entry key="M15" value="290.0115886595402" />
-      <entry key="M30" value="439.9892832445566" />
-      <entry key="H1" value="566.7004821033158" />
-      <entry key="H2" value="653.3597964577112" />
-      <entry key="H4" value="717.6899752785102" />
-      <entry key="D1" value="861.4137392244634" />
-      <entry key="W1" value="933.1158418235192" />
+      <entry key="MS100" value="1.469438217717647" />
+      <entry key="MS500" value="2.7092524810924106" />
+      <entry key="S2" value="9.141869653867717" />
+      <entry key="S5" value="18.61385419675724" />
+      <entry key="S10" value="36.23049940039877" />
+      <entry key="S30" value="90.22016140611395" />
+      <entry key="S60" value="142.79120839049182" />
+      <entry key="M2" value="213.36951297198178" />
+      <entry key="M5" value="320.61604740406403" />
+      <entry key="M10" value="428.638721344034" />
+      <entry key="M15" value="516.2663755974876" />
+      <entry key="M30" value="686.3788424398244" />
+      <entry key="H1" value="832.1734960978223" />
+      <entry key="H2" value="932.7839134335892" />
+      <entry key="H4" value="1005.5544551581862" />
+      <entry key="D1" value="1157.4192441827822" />
+      <entry key="W1" value="1230.8094884604343" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -116,7 +118,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "new-category-of-simulations",
+    "git-widget-placeholder": "bugfixes-and-few-improvements",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
