@@ -2313,6 +2313,84 @@ h3 {
   }
 }
 
+/* Double-slit interference simulation */
+.double-slit-frame {
+  color-scheme: dark;
+  background: #050817;
+}
+
+.double-slit-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.double-slit-grid line {
+  stroke: rgba(130, 150, 200, 0.08);
+  stroke-width: 1;
+}
+
+.apparatus-axis {
+  stroke: rgba(180, 194, 225, 0.2);
+  stroke-width: 1;
+  stroke-dasharray: 5 7;
+}
+
+.wave-source path,
+.slit-waves path {
+  fill: none;
+  stroke: var(--wave-color);
+  stroke-width: 2;
+  opacity: 0.3;
+}
+
+.wave-source--running path,
+.slit-waves--running path {
+  animation: double-slit-wave-pulse 1.8s ease-in-out infinite alternate;
+}
+
+.wave-source circle {
+  fill: var(--wave-color);
+  filter: drop-shadow(0 0 9px var(--wave-color));
+}
+
+.wave-source text,
+.slit-barrier text,
+.screen-label {
+  fill: rgba(205, 214, 235, 0.58);
+  font: 9px "IBM Plex Mono", monospace;
+  letter-spacing: 0.09em;
+}
+
+.slit-barrier line {
+  stroke: rgba(222, 230, 245, 0.72);
+  stroke-width: 8;
+  stroke-linecap: square;
+}
+
+.detection-screen {
+  fill: rgba(255, 255, 255, 0.04);
+  stroke: rgba(220, 228, 245, 0.34);
+  stroke-width: 1;
+}
+
+.detection-events circle {
+  opacity: 0.88;
+  filter: drop-shadow(0 0 2px var(--wave-color));
+}
+
+@keyframes double-slit-wave-pulse {
+  from { opacity: 0.16; }
+  to { opacity: 0.48; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-source--running path,
+  .slit-waves--running path {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

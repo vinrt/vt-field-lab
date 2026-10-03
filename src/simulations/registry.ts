@@ -80,7 +80,7 @@ export const simulations: SimulationDefinition[] = [
     difficulty: "intermediate",
     tags: ["interference", "amplitude", "measurement"],
     route: "/simulations/double-slit-interference",
-    status: "planned",
+    status: "available",
     featured: true,
     accent: "violet",
   },
